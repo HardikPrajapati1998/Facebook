@@ -4,7 +4,7 @@ var router = express.Router();
 var UsersModel = require('../schema/User_table');
 /* GET home page. */
 
-router.get('/login', function(req, res, next) {
+router.get('/', function(req, res, next) {
   
   res.render('Facebook', { title: 'Express' });
 });
