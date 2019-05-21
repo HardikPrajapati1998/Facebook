@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   
   res.render('Facebook', { title: 'Express' });
 });
+router.get('/Facebook3', function(req, res, next) {
+  
+  res.render('Facebook3', { title: 'Express' });
+});
 router.post('/signup', function (req, res, next) {
   console.log("hardik");
   console.log(req.body);
@@ -88,6 +92,22 @@ router.post('/loginprosee', function(req, res, next) {
     }
 
  
+  });
+});
+router.get('/User_display', function(req, res, next) {
+  
+UsersModel.find(function(err,data){
+  
+    if(err){
+      console.log("Error In  Fetch Data " + err)
+    }
+    else{
+      console.log(data);
+      
+      res.render('table',{  user_array : data});
+    
+    }
+
   });
 });
 module.exports = router;
